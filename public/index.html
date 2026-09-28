@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+    <title>STEAK | Web Data Management</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+<div class="layout">
+    <aside class="sidebar">
+        <div class="logo">
+            <h1>STEAK</h1>
+        </div>
+        <div class="database-info">
+            <span class="status-dot"></span>
+            <span id="databaseName">Database</span>
+        </div>
+        <div class="menu-title">MENU</div>
+        <div id="dashboardMenu" class="dashboard-menu active">
+            <span>▦</span>
+            Dashboard
+        </div>
+        <div class="menu-title table-menu-title">TABLES</div>
+        <div id="tableList" class="table-list"></div>
+    </aside>
+    <main class="main">
+        <header class="header">
+            <div>
+                <h2 id="pageTitle"> Dashboard</h2>
+                <p>Database Management</p>
+            </div>
+            <div class="connection">
+                <span class="status-dot"></span>
+                Connected
+            </div>
+        </header>
+        <section class="content">
+            <div id="dashboard">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span>DATABASE</span>
+                        <h2 id="statDatabase">-</h2>
+                    </div>
+                    <div class="stat-card">
+                        <span>TABLES</span>
+                        <h2 id="statTables">0</h2>
+                    </div>
+                    <div class="stat-card">
+                        <span>ROWS</span>
+                        <h2 id="statRows">0</h2>
+                    </div>
+                    <div class="stat-card">
+                        <span>STATUS</span>
+                        <h2 class="online">ONLINE</h2>
+                    </div>
+                </div>
+                <div id="userStats" class="user-stats">
+                    <div class="section-title">
+                        <div>
+                            <h3>User Analytics</h3>
+                            <p>Vinto user registration statistics</p>
+                        </div>
+                    </div>
+                    <div class="user-stats-grid">
+                        <div class="stat-card">
+                            <span>USERS</span>
+                            <h2 id="totalUsers">0</h2>
+                        </div>
+                        <div class="stat-card">
+                            <span>TODAY SIGNUPS</span>
+                            <h2 id="todayUsers">0</h2>
+                        </div>
+                        <div class="stat-card">
+                            <span>LAST 7 DAYS</span>
+                            <h2 id="weekUsers">0</h2>
+                        </div>
+                    </div>
+                </div>
+                <div id="userChartCard" class="chart-card">
+                    <div class="chart-header">
+                        <div>
+                            <h3>User Growth</h3>
+                            <p>New users during the last 7 days</p>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="userGrowthChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card chart-spacing">
+                    <div class="chart-header">
+                        <div>
+                            <h3>Overview</h3>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="databaseChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div id="tableView" class="card hidden">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3 id="tableTitle">
+                            Select Table
+                        </h3>
+
+                        <span id="rowCount">
+                            0 rows
+                        </span>
+
+                    </div>
+
+
+                    <div class="search-box">
+
+                        <input
+                            type="text"
+                            id="tableSearch"
+                            placeholder="Search data..."
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead id="dataHead">
+                        </thead>
+
+                        <tbody id="dataBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="/js/dashboard.js"></script>
+
+</body>
+
+</html>
